@@ -1,13 +1,15 @@
-version: "3.8"
+version: "3.7"
 
 services:
   neuters:
     container_name: neuters
+    hostname: neuters
     build:
       context: .
       dockerfile: Dockerfile
+    restart: always
     ports:
-      - 3004:13369
+      - '127.0.0.1:3045:13369'
     user: 65534:65534
     read_only: true
     security_opt:
