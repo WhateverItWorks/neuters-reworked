@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
     - uses: docker://rust:alpine
     - name: Install musl-gcc
       run: sudo apt -y install musl-tools
@@ -34,7 +34,7 @@ jobs:
     runs-on: windows-latest
 
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
     - name: build
       run: cargo build --release --verbose
     - name: Upload a Build Artifact
@@ -48,7 +48,7 @@ jobs:
     runs-on: macos-latest
 
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
     - name: build
       run: cargo build --release --verbose
     - name: Upload a Build Artifact
